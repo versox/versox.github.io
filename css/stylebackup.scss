@@ -1,0 +1,155 @@
+$lightgrey: #EFEFEF;
+$blue: #213458;
+$shadow: #3e4759;
+$accent: #1D7D81;
+$grey: #DDDDDD;
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: $grey;
+}
+
+canvas {
+    // position: sticky;
+    // position: -webkit-sticky;
+    // top: calc(-100vh + 3.7rem);
+    scroll-snap-align: start;
+    margin-bottom: -3.7rem;
+    width: 100%;
+    height: 100vh;
+    background-color: $blue;
+}
+
+@keyframes bar_anim {
+    0% {
+        opacity: 0;
+        box-shadow: none;
+    }
+    50% {
+        background-color: $blue;
+        opacity: 1;
+    }
+    100% {
+        box-shadow: $shadow 1px 1px 6px 0px;
+    }
+}
+
+@keyframes circle_anim {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+.top-bar {
+    // position: sticky;
+    // position: -webkit-sticky;
+    top: 0;
+    z-index: 10;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding: 0.2rem 1rem 0.5rem;
+    // box-shadow: $shadow 1px 1px 6px 0px;
+    color: $lightgrey;
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    // animation-name: top-bar_animation;
+    // animation-duration: 2s;
+    // animation-fill-mode: forwards;
+
+
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    // animation-direction: reverse;
+
+    &--bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3.7rem;
+        flex-direction: row;
+        animation-name: bar_anim;
+        animation-duration: 3s;
+        // animation-fill-mode: forwards;
+    }
+
+    &--circle {
+        position: fixed;
+        top: 40vh;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        height: 8rem;
+        box-shadow: unset;
+        animation-name: circle_anim;
+        animation-duration: 1.5s;
+        // animation-fill-mode: forwards;
+    }
+
+    // &--bar {
+    //     height: 3.7rem;
+    // }
+    // &--circle {
+    //     position: fixed;
+    //     top: 40vh;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     flex-direction: column;
+    //     height: 8rem;
+    //     box-shadow: unset;
+    // }    
+    &_title {
+        font-size: 3rem;
+        text-align: center;
+    }
+    &_icons {
+        display: flex;
+        flex-direction: row;
+        a {
+            color: unset;
+        }
+        a:hover {
+            background-color: $shadow;
+        }
+        svg {
+            margin: 0 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+}
+
+.content {
+    scroll-snap-align: start;
+    padding: 2rem 4rem;
+    p {
+        font-size: 1.2rem;
+    }
+    &_about {
+        font-size: 2rem;
+        color: black;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    &_projects {
+        &--heading {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+}

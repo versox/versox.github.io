@@ -1,0 +1,73 @@
+body {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #213458;
+}
+
+.top-bar {
+  z-index: 10;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  padding: 0.2rem 1rem 0.5rem;
+  color: #EFEFEF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 1s;
+}
+.top-bar--bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.7rem;
+  flex-direction: row;
+  background-color: #213458;
+  box-shadow: 1px 1px 6px 0px #3e4759;
+  opacity: 0;
+}
+@media only screen and (max-width: 599px) {
+  .top-bar--bar {
+    justify-content: center;
+  }
+  .top-bar--bar .top-bar_icons {
+    display: none;
+  }
+}
+.top-bar--circle {
+  position: fixed;
+  top: 40vh;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  height: 8rem;
+  box-shadow: unset;
+  opacity: 1;
+}
+.top-bar_title {
+  font-size: 3rem;
+  text-align: center;
+}
+.top-bar_icons {
+  display: flex;
+  flex-direction: row;
+}
+.top-bar_icons a {
+  color: unset;
+}
+.top-bar_icons a:hover {
+  background-color: #3e4759;
+}
+.top-bar_icons svg {
+  margin: 0 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
