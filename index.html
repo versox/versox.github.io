@@ -1,41 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Carson Cass</title>
-    <mata charset='utf-8'></mata>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="icon" href="favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Carson Cass</title>
 </head>
 
 <body>
-    <div class="top-bar top-bar--circle" id="circle">
-        <div class="top-bar_title">Carson Cass</div>
-        <div class="top-bar_icons">
-            <a href="https://github.com/versox" target="_blank">
-                <svg>
-                    <use href="icons.svg#github"></use>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/carsoncass/" target="_blank">
-                <svg>
-                    <use href="icons.svg#linkedinCircle"></use>
-                </svg>
-            </a>
-            <a href="mailto:cscass@ryerson.ca">
-                <svg>
-                    <use href="icons.svg#mail"></use>
-                </svg>
-            </a>
-            <a href="contact.html">
-                <svg>
-                    <use href="icons.svg#phone"></use>
-                </svg>
-            </a>
-        </div>
+  <canvas id="c"></canvas>
+  <!-- <div class="popup">
+    <h1>Email me</h1>
+    <input type="text" onclick="this.select()" name="email" value="cass.carson@gmail.com" readonly></input>
+    <button>Copy to clipboard</button>
+  </div> -->
+
+  <div class="top-bar top-bar--circle" id="circle">
+    <div class="top-bar_title">Carson Cass</div>
+    <div class="top-bar_icons">
+      <a href="https://github.com/versox" target="_blank">
+        <svg>
+          <use href="icons.svg#github"></use>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/carsoncass/" target="_blank">
+        <svg>
+          <use href="icons.svg#linkedinCircle"></use>
+        </svg>
+      </a>
+      <a>
+        <svg>
+          <use href="icons.svg#mail"></use>
+        </svg>
+      </a>
+      <a>
+        <svg>
+          <use href="icons.svg#phone"></use>
+        </svg>
+      </a>
     </div>
+  </div>
+  <div class="content"></div>
+  <div class="content">
+    <div class="content_grid">
+      <div class="content_main">
+        <!-- <img src="assets/nightglide.PNG"></img> -->
+        <video src="assets/nightglide.mp4" muted autoplay loop></video>
+      </div>
+      <div class="content_text">
+        <h1>Night Glide</h1>
+        <p>
+          A web game with infinite terrain.
+        </p>
+        <!-- <button>Play</button>
+        <div style="width: 0.5rem; display: inline-block;"></div>
+        <button>Code</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="hor8020-text">
+      <h1>Chipshare</h1>
+      <p>
+        A small music maker.
+      </p>
+    </div>
+    <div class="hor8020-media">
+      <img src="assets/chipshare.png"></img>
+    </div>
+  </div>
+  <script type="x-shader/x-vertex" id="v">
+    attribute vec4 a_position;
+
+    void main() {
+      gl_Position = a_position;
+    } 
+  </script>
+  <script type="x-shader/x-fragment" id="f">
+  precision mediump float;
+
+  uniform vec2 u_res;
+  uniform vec3 u_metaballs[17];
+  uniform vec4 u_color;
+  uniform vec2 u_mouse;
+
+  void main() {
+    vec2 uv = gl_FragCoord.xy / u_res - 0.5;
+    vec2 scaledMouse = u_mouse / u_res - 0.5;
+
+    uv.x *= u_res.x / u_res.y; // aspect ratio
+    scaledMouse.x *= u_res.x / u_res.y; 
+    scaledMouse.y = -scaledMouse.y;
+    
+    float effect = 0.;
+    
+    for(int i = 0; i < 17; i++) {
+        effect += u_metaballs[i].z / distance(uv, u_metaballs[i].xy);
+        //effect += 2. / distance(uv, u_metaballs[i]);
+    }
+    effect += 1.2 / distance(uv, scaledMouse);
+    
+    float mask = smoothstep(1., 1.01, 0.01 * effect); 
+
+    gl_FragColor = vec4(mask * u_color.xyz, u_color.w);
+  } 
+  </script>
+
+  <script src="dist/bundle.js"></script>
 </body>
 
 </html>
