@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/chipshare/static/js/runtime~main.bec18a5f.js"
   },
   {
-    "revision": "b853238e556cff1e50e4",
-    "url": "/chipshare/static/js/main.b853238e.chunk.js"
+    "revision": "4a0e5cab2dabf2ffa236",
+    "url": "/chipshare/static/js/main.4a0e5cab.chunk.js"
   },
   {
     "revision": "fabe298bd6abf50277d9",
     "url": "/chipshare/static/js/1.fabe298b.chunk.js"
   },
   {
-    "revision": "b853238e556cff1e50e4",
+    "revision": "4a0e5cab2dabf2ffa236",
     "url": "/chipshare/static/css/main.9fdc2f47.chunk.css"
   },
   {
-    "revision": "bbb967cd9c17a84cbadb48e4681cbacc",
+    "revision": "19053c051530a76339949bc747004576",
     "url": "/chipshare/index.html"
   }
 ];
