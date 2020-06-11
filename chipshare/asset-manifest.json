@@ -1,13 +1,13 @@
 {
   "main.css": "/chipshare/static/css/main.9fdc2f47.chunk.css",
-  "main.js": "/chipshare/static/js/main.858094b7.chunk.js",
-  "main.js.map": "/chipshare/static/js/main.858094b7.chunk.js.map",
+  "main.js": "/chipshare/static/js/main.4041d549.chunk.js",
+  "main.js.map": "/chipshare/static/js/main.4041d549.chunk.js.map",
   "static/js/1.fabe298b.chunk.js": "/chipshare/static/js/1.fabe298b.chunk.js",
   "static/js/1.fabe298b.chunk.js.map": "/chipshare/static/js/1.fabe298b.chunk.js.map",
   "runtime~main.js": "/chipshare/static/js/runtime~main.bec18a5f.js",
   "runtime~main.js.map": "/chipshare/static/js/runtime~main.bec18a5f.js.map",
   "static/css/main.9fdc2f47.chunk.css.map": "/chipshare/static/css/main.9fdc2f47.chunk.css.map",
   "index.html": "/chipshare/index.html",
-  "precache-manifest.f1774191c2421a42df96693b7481734a.js": "/chipshare/precache-manifest.f1774191c2421a42df96693b7481734a.js",
+  "precache-manifest.2106cc78ea7051dcb910b4e6f3365169.js": "/chipshare/precache-manifest.2106cc78ea7051dcb910b4e6f3365169.js",
   "service-worker.js": "/chipshare/service-worker.js"
 }
