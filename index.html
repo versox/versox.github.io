@@ -10,65 +10,196 @@
 
 <body>
   <canvas id="c"></canvas>
-  <!-- <div class="popup">
-    <h1>Email me</h1>
-    <input type="text" onclick="this.select()" name="email" value="cass.carson@gmail.com" readonly></input>
-    <button>Copy to clipboard</button>
-  </div> -->
+  <script src="dist/pre.bundle.js"></script>
 
-  <div class="top-bar top-bar--circle" id="circle">
-    <div class="top-bar_title">Carson Cass</div>
-    <div class="top-bar_icons">
-      <a href="https://github.com/versox" target="_blank">
-        <svg>
-          <use href="icons.svg#github"></use>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/carsoncass/" target="_blank">
-        <svg>
-          <use href="icons.svg#linkedinCircle"></use>
-        </svg>
-      </a>
-      <a>
-        <svg>
-          <use href="icons.svg#mail"></use>
-        </svg>
-      </a>
-      <a>
-        <svg>
-          <use href="icons.svg#phone"></use>
-        </svg>
-      </a>
-    </div>
-  </div>
-  <div class="content"></div>
-  <div class="content">
-    <div class="content_grid">
-      <div class="content_main">
-        <!-- <img src="assets/nightglide.PNG"></img> -->
-        <video src="assets/nightglide.mp4" muted autoplay loop></video>
-      </div>
-      <div class="content_text">
-        <h1>Night Glide</h1>
-        <p>
-          A web game with infinite terrain.
-        </p>
-        <!-- <button>Play</button>
-        <div style="width: 0.5rem; display: inline-block;"></div>
-        <button>Code</button> -->
+  <div class="page">
+    <div id="home" class="holder holder--center">
+      <div class="title">Carson Cass</div>
+      <div class="icons">
+        <a href="https://github.com/versox" target="_blank">
+          <svg>
+            <use href="icons.svg#github"></use>
+          </svg></a>
+        <a href="https://www.linkedin.com/in/carsoncass/" target="_blank">
+          <svg>
+            <use href="icons.svg#linkedinCircle"></use>
+          </svg></a>
+        <button class="btn-transparent" onclick="
+          document.getElementById('home').style.display = 'none';
+          document.getElementById('email').style.display = 'flex';
+        ">
+          <svg>
+            <use href="icons.svg#mail"></use>
+          </svg>
+        </button>
+        <button class="btn-transparent" onclick="
+          document.getElementById('home').style.display = 'none';
+          document.getElementById('phone').style.display = 'flex';
+        ">
+          <svg>
+            <use href="icons.svg#phone"></use>
+          </svg>
+        </button>
       </div>
     </div>
+    <div id="email" class="holder holder--center copyable-info">
+      <input id="emailAddress" type="text" onclick="this.select()" name="email" value="cass.carson@gmail.com"
+        readonly></input>
+      <div class="icons">
+        <button class="btn-transparent" onclick="
+          document.getElementById('email').style.display = 'none';
+          document.getElementById('home').style.display = 'flex';
+        ">
+          <svg>
+            <use href="icons.svg#back"></use>
+          </svg>
+        </button>
+        <a href="mailto:cass.carson@gmail.com">
+          <svg>
+            <use href="icons.svg#mail"></use>
+          </svg>
+        </a>
+        <button class="btn-transparent" onclick="
+          copy(
+            document.getElementById('emailAddress'),
+            document.getElementById('emailCopied'));
+        ">
+          <svg>
+            <use href="icons.svg#copy"></use>
+          </svg>
+          <div id="emailCopied" class="popup">
+            Copied to clipboard!
+          </div>
+        </button>
+      </div>
+    </div>
+    <div id="phone" class="holder holder--center copyable-info">
+      <input id="phoneNumber" type="text" onclick="this.select()" name="phone" value="519 830 5652" readonly
+        textContent="519 830 5652"></input>
+      <div class="icons">
+        <button class="btn-transparent" onclick="
+          document.getElementById('phone').style.display = 'none';
+          document.getElementById('home').style.display = 'flex';
+        ">
+          <svg>
+            <use href="icons.svg#back"></use>
+          </svg>
+        </button>
+        <button class="btn-transparent" onclick="
+          copy(
+            document.getElementById('phoneNumber'),
+            document.getElementById('phonePop'));
+        ">
+          <svg>
+            <use href="icons.svg#copy"></use>
+          </svg>
+          <div id="phonePop" class="popup">
+            Copied to clipboard!
+          </div>
+        </button>
+      </div>
+    </div>
+    <svg class="arrow-down">
+      <use href="icons.svg#angleDown"></use>
+    </svg>
   </div>
-  <div class="content">
-    <div class="hor8020-text">
+  <div class="page">
+    <video class="page__media" src="assets/nightglide.mp4" muted autoplay loop></video>
+    <div class="holder holder--bottom-center">
+      <h1>Night Glide</h1>
+      <p>
+        A web game with infinite terrain.
+      </p>
+      <div class="icons">
+        <a href="nightglide">
+          <svg>
+            <use href="icons.svg#play"></use>
+          </svg></a>
+        <a href="https://github.com/versox/nightglide">
+          <svg style="width: 1.74rem; height: 1.74rem;">
+            <use href="icons.svg#code"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page">
+    <img class="page__media page__media--dynamic" src="assets/chip-demo.png"></img>
+    <div class="holder holder--center holder--dynamic">
       <h1>Chipshare</h1>
       <p>
-        A small music maker.
+        Music making and sharing site.
       </p>
+      <div class="icons">
+        <a href="chipshare">
+          <svg>
+            <use href="icons.svg#play"></use>
+          </svg>
+        </a>
+        <a href="https://github.com/versox/chip-share">
+          <svg style="width: 1.74rem; height: 1.74rem;">
+            <use href="icons.svg#code"></use>
+          </svg>
+        </a>
+      </div>
     </div>
-    <div class="hor8020-media">
-      <img src="assets/chipshare.png"></img>
+  </div>
+  <div class="more-projects">
+    <div class="more-projects__project">
+      <img src="assets/4917.jpg"></img>
+      <div class="more-projects__text more-projects__text--left">
+        <h1>First Robotics</h1>
+        <p>
+          Team 4917! See our season <a href="http://www.4917.ca/2017-season.html">here</a>
+        </p>
+      </div>
     </div>
+    <div class="more-projects__project">
+      <div class="more-projects__text more-projects__text--right">
+        <h1>Situal</h1>
+        <p>
+          An uber eats like app for sit down restaurants.
+        </p>
+      </div>
+      <img src="assets/situal.png" style="object-position: 50% top;"></img>
+    </div>
+
+    <div class="more-projects__project more-projects__project--snap">
+      <img src="assets/webgl-terrain.png"></img>
+      <div class="more-projects__text more-projects__text--left">
+        <h1>Webgl Terrain</h1>
+        <p>
+          Dynamic terrain simulation.
+        </p>
+      </div>
+    </div>
+    <div class="more-projects__project">
+      <div class="more-projects__text more-projects__text--right">
+        <h1>Webl Submarine</h1>
+        <p>
+          Drivable submarine simulation.
+        </p>
+      </div>
+      <img src="assets/webgl-sub.png"></img>
+    </div>
+  </div>
+  <div class="page page--about">
+    <h1>about</h1>
+    <p>
+      blue blob is made with a pixel shader <br>(fragment shader drawn on the whole screen)<br> that takes in a set of weighted metaballs along with the current scroll and mouse position
+    </p>
+    <p>
+      font-awesome icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a><br>
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </p>
+    <p>
+      back to top
+    </p>
+    <a href="#">
+      <svg>
+        <use href="icons.svg#up"></use>
+      </svg>
+    </a>
   </div>
   <script type="x-shader/x-vertex" id="v">
     attribute vec4 a_position;
@@ -106,8 +237,7 @@
     gl_FragColor = vec4(mask * u_color.xyz, u_color.w);
   } 
   </script>
-
-  <script src="dist/bundle.js"></script>
+  <script src="dist/main.bundle.js"></script>
 </body>
 
 </html>
