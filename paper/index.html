@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paper</title>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <div id="scroller">
+        <div id="holder">
+            <textarea readonly id="l-body"></textarea>
+        </div>
+    </div>
+    <script src="dist/bundle.js"></script>
+    <div id="hide">
+        <div id="password">
+            <label>password</label>
+            <input id="pass" type="text"></input>
+            <button onclick="unlock()">unlock</button>
+        </div>
+    </div>
+</body>
+
+</html>
