@@ -1,0 +1,12 @@
+.main {
+    margin: auto;
+    width: 85%;
+    min-width: 8rem;
+    background-color: rgb(116, 175, 234);
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+img {
+    margin: 0.5rem;
+}
